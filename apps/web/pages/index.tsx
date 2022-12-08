@@ -1,4 +1,5 @@
 import { sayHello } from '@leejin/lib';
+import { Button } from '@leejin/ui';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
@@ -20,6 +21,7 @@ export default function Home() {
         </h1>
 
         <h2>{hello}</h2>
+        <Button>hello from ui</Button>
 
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>

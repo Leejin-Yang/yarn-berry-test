@@ -22,12 +22,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
       {\
         "name": "@leejin/lib",\
         "reference": "workspace:packages/lib"\
+      },\
+      {\
+        "name": "@leejin/ui",\
+        "reference": "workspace:packages/ui"\
       }\
     ],\
     "enableTopLevelFallback": true,\
     "ignorePatternData": "(^(?:\\\\.yarn\\\\/sdks(?:\\\\/(?!\\\\.{1,2}(?:\\\\/|$))(?:(?:(?!(?:^|\\\\/)\\\\.{1,2}(?:\\\\/|$)).)*?)|$))$)",\
     "fallbackExclusionList": [\
       ["@leejin/lib", ["workspace:packages/lib"]],\
+      ["@leejin/ui", ["workspace:packages/ui"]],\
       ["@leejin/web", ["workspace:apps/web"]],\
       ["yarn-berry-test", ["workspace:."]]\
     ],\
@@ -131,20 +136,37 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "SOFT"\
         }]\
       ]],\
+      ["@leejin/ui", [\
+        ["workspace:packages/ui", {\
+          "packageLocation": "./packages/ui/",\
+          "packageDependencies": [\
+            ["@leejin/ui", "workspace:packages/ui"],\
+            ["@types/node", "npm:18.11.11"],\
+            ["@types/react", "npm:18.0.26"],\
+            ["@types/react-dom", "npm:18.0.9"],\
+            ["react", "npm:18.2.0"],\
+            ["react-dom", "virtual:5e3336a4e37fc346139d7eceae2b12706d434145bbfd87d4493b37bcbf7d791239bb3c3e34fecfb10784709a14a8957715d09415cf074a534da2467bdc4e8e6d#npm:18.2.0"],\
+            ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"]\
+          ],\
+          "linkType": "SOFT"\
+        }]\
+      ]],\
       ["@leejin/web", [\
         ["workspace:apps/web", {\
           "packageLocation": "./apps/web/",\
           "packageDependencies": [\
             ["@leejin/web", "workspace:apps/web"],\
             ["@leejin/lib", "workspace:packages/lib"],\
+            ["@leejin/ui", "workspace:packages/ui"],\
             ["@types/node", "npm:18.11.11"],\
             ["@types/react", "npm:18.0.26"],\
             ["@types/react-dom", "npm:18.0.9"],\
             ["eslint", "npm:8.29.0"],\
             ["eslint-config-next", "virtual:a07ed12ebb4201a474ca2c0b168497f27f989f5d4e3ed493c1107a4f6ba2fe09c34b66e2df051d2d455b3b96ee2b7798039edcc6847f8b0e65844ec6f1c019f3#npm:13.0.6"],\
             ["next", "virtual:a07ed12ebb4201a474ca2c0b168497f27f989f5d4e3ed493c1107a4f6ba2fe09c34b66e2df051d2d455b3b96ee2b7798039edcc6847f8b0e65844ec6f1c019f3#npm:13.0.6"],\
+            ["next-transpile-modules", "npm:10.0.0"],\
             ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:a07ed12ebb4201a474ca2c0b168497f27f989f5d4e3ed493c1107a4f6ba2fe09c34b66e2df051d2d455b3b96ee2b7798039edcc6847f8b0e65844ec6f1c019f3#npm:18.2.0"],\
+            ["react-dom", "virtual:5e3336a4e37fc346139d7eceae2b12706d434145bbfd87d4493b37bcbf7d791239bb3c3e34fecfb10784709a14a8957715d09415cf074a534da2467bdc4e8e6d#npm:18.2.0"],\
             ["typescript", "patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=d73830"]\
           ],\
           "linkType": "SOFT"\
@@ -2620,7 +2642,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["node-sass", null],\
             ["postcss", "npm:8.4.14"],\
             ["react", "npm:18.2.0"],\
-            ["react-dom", "virtual:a07ed12ebb4201a474ca2c0b168497f27f989f5d4e3ed493c1107a4f6ba2fe09c34b66e2df051d2d455b3b96ee2b7798039edcc6847f8b0e65844ec6f1c019f3#npm:18.2.0"],\
+            ["react-dom", "virtual:5e3336a4e37fc346139d7eceae2b12706d434145bbfd87d4493b37bcbf7d791239bb3c3e34fecfb10784709a14a8957715d09415cf074a534da2467bdc4e8e6d#npm:18.2.0"],\
             ["sass", null],\
             ["styled-jsx", "virtual:74610d8dd06ee8995bb877e15b3afea5a6a5871efb806cc01de9ec8c890cc5c3514cd144231a77eabda374fabde2f9af2deb84307ce654260d643de7cfdaba23#npm:5.1.0"]\
           ],\
@@ -2635,6 +2657,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "react-dom",\
             "react",\
             "sass"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["next-transpile-modules", [\
+        ["npm:10.0.0", {\
+          "packageLocation": "./.yarn/cache/next-transpile-modules-npm-10.0.0-35632e5048-3300fc7081.zip/node_modules/next-transpile-modules/",\
+          "packageDependencies": [\
+            ["next-transpile-modules", "npm:10.0.0"],\
+            ["enhanced-resolve", "npm:5.12.0"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -2934,10 +2966,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
-        ["virtual:a07ed12ebb4201a474ca2c0b168497f27f989f5d4e3ed493c1107a4f6ba2fe09c34b66e2df051d2d455b3b96ee2b7798039edcc6847f8b0e65844ec6f1c019f3#npm:18.2.0", {\
-          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-8039bce92a/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
+        ["virtual:5e3336a4e37fc346139d7eceae2b12706d434145bbfd87d4493b37bcbf7d791239bb3c3e34fecfb10784709a14a8957715d09415cf074a534da2467bdc4e8e6d#npm:18.2.0", {\
+          "packageLocation": "./.yarn/__virtual__/react-dom-virtual-adb292cff2/0/cache/react-dom-npm-18.2.0-dd675bca1c-7d323310be.zip/node_modules/react-dom/",\
           "packageDependencies": [\
-            ["react-dom", "virtual:a07ed12ebb4201a474ca2c0b168497f27f989f5d4e3ed493c1107a4f6ba2fe09c34b66e2df051d2d455b3b96ee2b7798039edcc6847f8b0e65844ec6f1c019f3#npm:18.2.0"],\
+            ["react-dom", "virtual:5e3336a4e37fc346139d7eceae2b12706d434145bbfd87d4493b37bcbf7d791239bb3c3e34fecfb10784709a14a8957715d09415cf074a534da2467bdc4e8e6d#npm:18.2.0"],\
             ["@types/react", "npm:18.0.26"],\
             ["loose-envify", "npm:1.4.0"],\
             ["react", "npm:18.2.0"],\
@@ -3403,6 +3435,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./.yarn/cache/typescript-patch-b9b216bc0d-67ca21a387.zip/node_modules/typescript/",\
           "packageDependencies": [\
             ["typescript", "patch:typescript@npm%3A4.9.3#~builtin<compat/typescript>::version=4.9.3&hash=d73830"]\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830", {\
+          "packageLocation": "./.yarn/cache/typescript-patch-b74a6ef84c-37f6e2c3c5.zip/node_modules/typescript/",\
+          "packageDependencies": [\
+            ["typescript", "patch:typescript@npm%3A4.9.4#~builtin<compat/typescript>::version=4.9.4&hash=d73830"]\
           ],\
           "linkType": "HARD"\
         }]\
