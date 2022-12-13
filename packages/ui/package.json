@@ -5,6 +5,9 @@
   "scripts": {
     "typecheck": "tsc --project ./tsconfig.json --noEmit"
   },
+  "peerDependencies": {
+    "react": "^17 || ^18"
+  },
   "devDependencies": {
     "@types/node": "^18.11.11",
     "@types/react": "^18.0.26",
