@@ -22,7 +22,6 @@ export default function Home() {
 
         <h2>{hello}</h2>
         <Button variant="contained">hello from ui</Button>
-        <Button variant="outlined">hello from ui</Button>
 
         <p className={styles.description}>
           Get started by editing <code className={styles.code}>pages/index.tsx</code>
